@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kampala Fresh Drinks - refreshing beverages for every moment.">
+  <title>Kampala Fresh Drinks | Refresh Your Moment</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --green: #073f32;
+      --lime: #c8f169;
+      --orange: #ff8b39;
+      --cream: #f8f7ef;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: Arial, sans-serif; color: var(--green); background: var(--cream); }
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 22px 8%; background: white; position: sticky; top: 0; z-index: 10;
+      box-shadow: 0 3px 15px #0000000a;
+    }
+    .logo { font-size: 22px; font-weight: 900; }
+    .logo span { color: #f47b25; }
+    nav { display: flex; gap: 25px; }
+    nav a { color: var(--green); text-decoration: none; font-weight: bold; }
+    nav a:hover { color: #f47b25; }
+    .hero {
+      min-height: 570px; padding: 90px 8%; display: grid;
+      grid-template-columns: 1.1fr 1fr; align-items: center; gap: 35px;
+      background: radial-gradient(circle at 80% 40%, #d9efb5, transparent 40%), var(--cream);
+    }
+    .tag { background: #e7f4d4; padding: 10px 16px; border-radius: 30px; display: inline-block; font-size: 13px; font-weight: bold; }
+    h1 { font-size: clamp(42px, 5vw, 72px); line-height: 1.05; margin: 24px 0; letter-spacing: -2px; }
+    h1 span { color: #f47b25; }
+    .hero p { font-size: 17px; line-height: 1.8; color: #53645c; max-width: 490px; }
+    .btn {
+      display: inline-block; background: var(--green); color: white; border: none;
+      padding: 15px 24px; border-radius: 8px; text-decoration: none;
+      font-weight: bold; cursor: pointer; margin-top: 25px;
+    }
+    .btn:hover { background: #126b50; transform: translateY(-2px); }
+    .drink-art {
+      min-height: 350px; border-radius: 45% 45% 25px 25px;
+      background: linear-gradient(145deg, #b7df8b, #eff6d7);
+      display: flex; justify-content: center; align-items: center;
+      font-size: 125px; position: relative; overflow: hidden;
+    }
+    .drink-art::before, .drink-art::after {
+      content: ""; position: absolute; border: 2px solid #ffffff70;
+      border-radius: 50%; width: 250px; height: 250px;
+    }
+    .drink-art::after { width: 340px; height: 340px; }
+    .drink-art span { z-index: 1; filter: drop-shadow(0 18px 12px #284b2840); }
+    section { padding: 80px 8%; }
+    .section-head { text-align: center; max-width: 650px; margin: 0 auto 40px; }
+    .section-head h2 { font-size: 38px; margin-bottom: 14px; }
+    .section-head p { color: #68776f; line-height: 1.7; }
+    .products { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .product {
+      background: white; border-radius: 18px; padding: 28px; text-align: center;
+      box-shadow: 0 8px 30px #183f2910; transition: .25s;
+    }
+    .product:hover { transform: translateY(-7px); }
+    .product-icon { font-size: 65px; background: #f0f7e5; padding: 25px; border-radius: 15px; }
+    .product h3 { margin: 20px 0 10px; }
+    .product p { color: #68776f; line-height: 1.6; font-size: 14px; }
+    .about { background: var(--green); color: white; text-align: center; }
+    .about p { max-width: 720px; margin: 20px auto; color: #d3e1d9; line-height: 1.8; }
+    .about .btn { background: var(--lime); color: var(--green); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 45px; }
+    .contact-grid h2 { font-size: 36px; margin-bottom: 18px; }
+    .contact-grid p { line-height: 1.8; color: #68776f; }
+    form { display: grid; gap: 14px; }
+    input, textarea {
+      width: 100%; padding: 15px; border: 1px solid #d9dfd7;
+      border-radius: 8px; font: inherit; background: white;
+    }
+    textarea { min-height: 120px; resize: vertical; }
+    form .btn { margin-top: 0; }
+    #formMessage { color: #087447; font-weight: bold; }
+    footer { background: #042c24; color: #d6e5dc; text-align: center; padding: 25px; font-size: 14px; }
+    @media(max-width: 760px) {
+      header { flex-direction: column; gap: 18px; }
+      nav { gap: 13px; flex-wrap: wrap; justify-content: center; }
+      .hero { grid-template-columns: 1fr; padding-top: 60px; }
+      .drink-art { min-height: 270px; font-size: 95px; }
+      .products, .contact-grid { grid-template-columns: 1fr; }
+      section { padding: 60px 6%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">KAMPALA <span>FRESH.</span></div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#drinks">Our Drinks</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div>
+        <span class="tag">MADE FOR YOUR MOMENT ✨</span>
+        <h1>Refresh your <span>world.</span></h1>
+        <p>Discover a refreshing experience inspired by Kampala's energy. From everyday moments to special celebrations, make every sip count.</p>
+        <a class="btn" href="#drinks">Explore Our Drinks →</a>
+      </div>
+      <div class="drink-art" aria-label="Illustration of refreshing drinks">
+        <span>🥤🍊</span>
+      </div>
+    </section>
+
+    <section id="drinks">
+      <div class="section-head">
+        <h2>Find Your Refresh</h2>
+        <p>Explore our fictional product collection, designed to bring a little brightness to your day.</p>
+      </div>
+      <div class="products">
+        <article class="product">
+          <div class="product-icon">🍊</div>
+          <h3>Sunrise Orange</h3>
+          <p>A bright citrus-inspired flavour for sunny afternoons.</p>
+        </article>
+        <article class="product">
+          <div class="product-icon">🍋</div>
+          <h3>Lemon Spark</h3>
+          <p>A crisp lemon-inspired concept for a refreshing break.</p>
+        </article>
+        <article class="product">
+          <div class="product-icon">🍓</div>
+          <h3>Berry Splash</h3>
+          <p>A fruity berry-inspired drink concept for fun moments.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <h2>Inspired by Kampala. Made for Everyone.</h2>
+      <p>Kampala Fresh Drinks is a fictional beverage brand concept created to demonstrate modern web development, responsive design, and interactive website features.</p>
+      <a class="btn" href="#contact">Get in Touch</a>
+    </section>
+
+    <section id="contact">
+      <div class="contact-grid">
+        <div>
+          <h2>Let's Talk Refreshment.</h2>
+          <p>Have a question, a partnership idea, or feedback about our concept? Send us a message using the form.</p>
+          <p style="margin-top:18px">📍 Kampala, Uganda</p>
+          <p>✉️ hello@kampalafresh.example</p>
+        </div>
+        <form id="contactForm">
+          <input id="name" type="text" placeholder="Your full name" required>
+          <input id="email" type="email" placeholder="Your email address" required>
+          <textarea id="message" placeholder="Write your message..." required></textarea>
+          <button class="btn" type="submit">Send Message →</button>
+          <p id="formMessage" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Kampala Fresh Drinks. Student portfolio demonstration project.</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      if (!name || !email || !message) {
+        document.getElementById("formMessage").textContent = "Please complete every field.";
+        return;
+      }
+
+      document.getElementById("formMessage").textContent =
+        "Thank you, " + name + "! The demo form has been validated. No message was sent to a server.";
+      this.reset();
+    });
+  </script>
+</body>
+</html>
